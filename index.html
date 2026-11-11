@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Manish Kumar - Cybersecurity Student and Aspiring SOC Analyst Portfolio">
+<title>Manish Kumar | Cybersecurity Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+    --bg: #080d0b;
+    --card: #101a15;
+    --green: #00e676;
+    --green-dark: #00a854;
+    --text: #e8f5ed;
+    --muted: #9aada1;
+    --border: #20382b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8,13,11,0.95);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+nav {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--green);
+    white-space: nowrap;
+}
+
+.logo span {
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+section {
+    padding: 85px 0;
+    scroll-margin-top: 75px;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background:
+    radial-gradient(circle at 80% 40%, rgba(0,230,118,0.10), transparent 35%);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 7px 14px;
+    border: 1px solid var(--green-dark);
+    border-radius: 30px;
+    color: var(--green);
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 68px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 650px;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    background: var(--green);
+    color: #061009;
+    font-weight: 700;
+    margin: 5px 10px 5px 0;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #8affbd;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-title span {
+    color: var(--green);
+}
+
+.section-subtitle {
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+.about-grid,
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--green);
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    color: var(--green);
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.highlight {
+    color: var(--green);
+    font-weight: 600;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    padding: 7px 0;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.skill-list li::before {
+    content: "▹ ";
+    color: var(--green);
+}
+
+.timeline {
+    border-left: 2px solid var(--green-dark);
+    padding-left: 25px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: -32px;
+    top: 8px;
+    border-radius: 50%;
+    background: var(--green);
+}
+
+.timeline-item h3 {
+    color: var(--green);
+}
+
+.timeline-item p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.project-card h3 {
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.tech {
+    display: inline-block;
+    background: #17271e;
+    color: var(--green);
+    border: 1px solid var(--border);
+    padding: 5px 10px;
+    margin: 4px 3px 0 0;
+    border-radius: 5px;
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+}
+
+.credential-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.credential-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.credential-card h3 {
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+.credential-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    text-align: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.contact-card h3 {
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: var(--muted);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+    color: var(--green);
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--green);
+}
+
+@media(max-width: 850px) {
+    nav {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .skills-grid,
+    .credential-grid,
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    .about-grid,
+    .two-column,
+    .project-grid,
+    .skills-grid,
+    .credential-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+<nav class="container">
+    <a href="#home" class="logo">&lt;Manish<span>Sec</span>/&gt;</a>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#work">Practical Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Internship</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+<div class="container hero-content">
+
+    <div class="tag">CYBERSECURITY STUDENT | ASPIRING SOC ANALYST</div>
+
+    <h1>Hello, I'm <span>Manish Kumar</span></h1>
+
+    <p>
+        A Third-Year B.Tech Computer Science Engineering student
+        specializing in Cyber Security. Passionate about ethical hacking,
+        threat detection, network security and protecting digital systems.
+    </p>
+
+    <a href="#projects" class="btn">Explore My Projects</a>
+    <a href="#contact" class="btn btn-outline">Contact Me</a>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+
+    <h2 class="section-title">About <span>Me</span></h2>
+    <p class="section-subtitle">A little introduction about my background and interests.</p>
+
+    <div class="about-grid">
+
+        <div class="card">
+            <h3>Who I Am</h3>
+            <p>
+                I am a third-year B.Tech CSE Cyber Security student at
+                AKS University. I enjoy exploring cybersecurity tools,
+                understanding vulnerabilities and learning how to secure
+                networks and systems through practical exercises.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>My Career Goal</h3>
+            <p>
+                My goal is to build a career in cybersecurity, particularly
+                in Security Operations, threat detection and incident response.
+                I continuously work on improving my technical knowledge
+                through hands-on practice and projects.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+<div class="container">
+
+    <h2 class="section-title">My Learning <span>Journey</span></h2>
+    <p class="section-subtitle">My academic and practical learning progression.</p>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h3>2024 – Beginning of B.Tech</h3>
+            <p>
+                Started my B.Tech journey in Computer Science and Engineering
+                with a specialization in Cyber Security.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>2025 – Cybersecurity Fundamentals</h3>
+            <p>
+                Started exploring Linux, networking fundamentals,
+                ethical hacking concepts and cybersecurity tools.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>2025–2026 – Practical Learning</h3>
+            <p>
+                Practiced tools such as Nmap, Wireshark and Metasploit
+                in learning environments and worked on cybersecurity projects.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>2026 – Professional Development</h3>
+            <p>
+                Continuing to develop practical cybersecurity skills,
+                complete coursework and prepare for industry opportunities.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
+
+    <h2 class="section-title">Technical <span>Skills</span></h2>
+    <p class="section-subtitle">Technologies and areas I am learning and practicing.</p>
+
+    <div class="skills-grid">
+
+        <div class="card">
+            <h3>Cybersecurity</h3>
+            <ul class="skill-list">
+                <li>Ethical Hacking Fundamentals</li>
+                <li>Network Security</li>
+                <li>Vulnerability Assessment</li>
+                <li>Threat Detection Fundamentals</li>
+                <li>Phishing Awareness</li>
+                <li>Information Security</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Tools & Platforms</h3>
+            <ul class="skill-list">
+                <li>Kali Linux</li>
+                <li>Nmap</li>
+                <li>Wireshark</li>
+                <li>Metasploit Framework</li>
+                <li>VirtualBox</li>
+                <li>Git & GitHub</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Technical Foundation</h3>
+            <ul class="skill-list">
+                <li>Linux Administration</li>
+                <li>Networking Fundamentals</li>
+                <li>Python Programming</li>
+                <li>HTML & CSS</li>
+                <li>Database Fundamentals</li>
+                <li>Operating Systems</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- LINUX ADMINISTRATION -->
+<section id="linux">
+<div class="container">
+
+    <h2 class="section-title">Linux <span>Administration</span></h2>
+    <p class="section-subtitle">Linux concepts and commands practiced in my learning environment.</p>
+
+    <div class="project-grid">
+
+        <div class="card">
+            <h3>File & Directory Management</h3>
+            <p>
+                Practiced creating, navigating, copying, moving and
+                deleting files and directories using Linux commands.
+            </p>
+            <span class="tech">pwd</span>
+            <span class="tech">ls</span>
+            <span class="tech">cd</span>
+            <span class="tech">mkdir</span>
+            <span class="tech">cp</span>
+            <span class="tech">mv</span>
+        </div>
+
+        <div class="card">
+            <h3>File Permissions</h3>
+            <p>
+                Learned how Linux controls file access through
+                owner, group and others permissions.
+            </p>
+            <span class="tech">chmod</span>
+            <span class="tech">chown</span>
+            <span class="tech">rwx</span>
+            <span class="tech">755</span>
+        </div>
+
+        <div class="card">
+            <h3>User Administration</h3>
+            <p>
+                Explored user and group management, password
+                administration and basic account permissions.
+            </p>
+            <span class="tech">whoami</span>
+            <span class="tech">id</span>
+            <span class="tech">useradd</span>
+            <span class="tech">passwd</span>
+        </div>
+
+        <div class="card">
+            <h3>System Monitoring</h3>
+            <p>
+                Practiced checking running processes, system
+                information and resource utilization.
+            </p>
+            <span class="tech">top</span>
+            <span class="tech">ps</span>
+            <span class="tech">df -h</span>
+            <span class="tech">free -h</span>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PRACTICAL WORK -->
+<section id="work">
+<div class="container">
+
+    <h2 class="section-title">Practical <span>Cybersecurity Work</span></h2>
+    <p class="section-subtitle">
+        Hands-on learning and tool-based exercises performed in authorized environments.
+    </p>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h3>Nmap – Network Scanning</h3>
+            <p>
+                Practiced network discovery, open-port identification,
+                service detection and basic vulnerability assessment
+                in authorized lab environments.
+            </p>
+            <span class="tech">Nmap</span>
+            <span class="tech">Port Scanning</span>
+            <span class="tech">Service Detection</span>
+        </div>
+
+        <div class="project-card">
+            <h3>Wireshark – Network Analysis</h3>
+            <p>
+                Explored packet capture and network traffic analysis
+                to understand communication protocols and identify
+                unusual traffic patterns.
+            </p>
+            <span class="tech">Wireshark</span>
+            <span class="tech">Packet Analysis</span>
+            <span class="tech">TCP/IP</span>
+        </div>
+
+        <div class="project-card">
+            <h3>Metasploit Framework</h3>
+            <p>
+                Explored the Metasploit framework and practiced
+                basic payload testing in controlled lab environments
+                to understand security testing concepts.
+            </p>
+            <span class="tech">Metasploit</span>
+            <span class="tech">Penetration Testing</span>
+            <span class="tech">Lab Practice</span>
+        </div>
+
+        <div class="project-card">
+            <h3>Zphisher – Phishing Simulation</h3>
+            <p>
+                Studied phishing simulation concepts to understand
+                how social engineering attacks work and why
+                user awareness and security controls matter.
+            </p>
+            <span class="tech">Zphisher</span>
+            <span class="tech">Phishing Awareness</span>
+            <span class="tech">Social Engineering</span>
+        </div>
+
+        <div class="project-card">
+            <h3>Metasploitable Lab</h3>
+            <p>
+                Explored a deliberately vulnerable virtual machine
+                to understand common vulnerabilities and
+                practice security assessment techniques.
+            </p>
+            <span class="tech">Metasploitable</span>
+            <span class="tech">VirtualBox</span>
+            <span class="tech">Security Testing</span>
+        </div>
+
+        <div class="project-card">
+            <h3>Kali Linux Environment</h3>
+            <p>
+                Set up and explored Kali Linux in a virtualized
+                environment for learning Linux commands,
+                networking and ethical hacking tools.
+            </p>
+            <span class="tech">Kali Linux</span>
+            <span class="tech">VirtualBox</span>
+            <span class="tech">Linux</span>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+
+    <h2 class="section-title">My <span>Projects</span></h2>
+    <p class="section-subtitle">Projects developed to apply my technical knowledge.</p>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h3>AI-Based Email Analyzer</h3>
+            <p>
+                Developed an email analysis project that classifies
+                email content as spam or safe and helps identify
+                suspicious links and potential phishing indicators.
+                The project demonstrates how machine learning can
+                support email security analysis.
+            </p>
+
+            <p><strong class="highlight">Key Features:</strong></p>
+            <p>
+                Email classification, suspicious-link analysis,
+                spam detection and result presentation.
+            </p>
+
+            <span class="tech">Python</span>
+            <span class="tech">Machine Learning</span>
+            <span class="tech">Flask</span>
+            <span class="tech">HTML</span>
+            <span class="tech">CSS</span>
+        </div>
+
+        <div class="project-card">
+            <h3>SpamGuard – Spam Email Filtering System</h3>
+            <p>
+                Built a web-based spam email filtering system
+                using machine learning to classify email text
+                into spam and legitimate categories.
+            </p>
+
+            <p><strong class="highlight">Key Features:</strong></p>
+            <p>
+                Text preprocessing, TF-IDF feature extraction,
+                classification and prediction history.
+            </p>
+
+            <span class="tech">Python</span>
+            <span class="tech">Flask</span>
+            <span class="tech">Naive Bayes</span>
+            <span class="tech">MongoDB</span>
+            <span class="tech">JavaScript</span>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- INTERNSHIP -->
+<section id="experience">
+<div class="container">
+
+    <h2 class="section-title">Internship <span>Experience</span></h2>
+    <p class="section-subtitle">Professional learning and internship exposure.</p>
+
+    <div class="card">
+        <h3>IBM – Virtual Internship</h3>
+        <p>
+            Completed a two-month virtual internship with IBM-related
+            learning material and cybersecurity modules. This experience
+            helped me explore cybersecurity concepts and strengthen
+            my understanding of security practices.
+        </p>
+        <br>
+        <span class="tech">Cybersecurity</span>
+        <span class="tech">Virtual Internship</span>
+        <span class="tech">Security Learning</span>
+    </div>
+
+</div>
+</section>
+
+<!-- CERTIFICATIONS & CREDENTIALS -->
+<section id="certifications">
+<div class="container">
+
+    <h2 class="section-title">
+        Certifications & <span>Credentials</span>
+    </h2>
+
+    <p class="section-subtitle">
+        My professional learning, cybersecurity certifications
+        and training experiences.
+    </p>
+
+    <div class="credential-grid">
+
+        <div class="credential-card">
+            <h3>NPTEL – Ethical Hacking</h3>
+            <p>
+                Ethical Hacking coursework through NPTEL,
+                IIT Kharagpur, covering security fundamentals,
+                ethical hacking concepts and practical learning.
+            </p>
+            <span class="tech">NPTEL</span>
+            <span class="tech">IIT Kharagpur</span>
+            <span class="tech">Ethical Hacking</span>
+        </div>
+
+        <div class="credential-card">
+            <h3>Tutedude – Ethical Hacking</h3>
+            <p>
+                Cybersecurity training focused on ethical hacking
+                fundamentals, security concepts and practical
+                exposure to cybersecurity tools.
+            </p>
+            <span class="tech">Tutedude</span>
+            <span class="tech">Cybersecurity</span>
+        </div>
+
+        <div class="credential-card">
+            <h3>IBM – Virtual Internship</h3>
+            <p>
+                Completed a two-month virtual internship with
+                cybersecurity learning modules and exposure
+                to security concepts.
+            </p>
+            <span class="tech">IBM</span>
+            <span class="tech">Virtual Internship</span>
+        </div>
+
+    </div>
+
+</div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+
+    <h2 class="section-title">Let's <span>Connect</span></h2>
+
+    <p class="section-subtitle">
+        Open to cybersecurity opportunities, internships,
+        collaborations and professional networking.
+        Feel free to connect with me.
+    </p>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <h3>LinkedIn</h3>
+            <p>
+                <a href="YOUR_LINKEDIN_URL" target="_blank"
+                   rel="noopener noreferrer">
+                   Connect Professionally
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>GitHub</h3>
+            <p>
+                <a href="YOUR_GITHUB_URL" target="_blank"
+                   rel="noopener noreferrer">
+                   Explore My Projects
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>Email</h3>
+            <p>
+                <a href="mailto:YOUR_EMAIL@example.com">
+                   YOUR_EMAIL@example.com
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+    <p>
+        Designed & Developed by <span>Manish Kumar</span>
+    </p>
+    <p>
+        Cybersecurity Student | Aspiring SOC Analyst
+    </p>
+    <p>© 2026 All Rights Reserved.</p>
+</footer>
